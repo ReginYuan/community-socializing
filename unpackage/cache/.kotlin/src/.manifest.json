@@ -1,0 +1,28 @@
+{
+  "version": "1",
+  "env": {
+    "compiler_version": "4.06"
+  },
+  "files": {
+    "index.kt": {
+      "class": "",
+      "md5": "920698a10332f6c66ed49632e427dbbbc26c321a"
+    },
+    "pages/msg/msg.kt": {
+      "class": "GenPagesMsgMsg",
+      "md5": "727f6500ff6a152c13d66769977ed9c66e2ea2c4"
+    },
+    "pages/my/my.kt": {
+      "class": "GenPagesMyMy",
+      "md5": "073cce9d66b318319eb582ec99e5d196591fc118"
+    },
+    "pages/topic/topic.kt": {
+      "md5": "a335cc0c123db32e77bf1c319e5a328625c2f33a",
+      "class": "GenPagesTopicTopic"
+    },
+    "pages/index/index.kt": {
+      "class": "GenPagesIndexIndex",
+      "md5": "439518c991a81e0105098f59032ddab3bfb664a9"
+    }
+  }
+}

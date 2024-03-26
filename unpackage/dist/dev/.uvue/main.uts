@@ -1,0 +1,48 @@
+import App from './App.uvue'
+
+import { createSSRApp } from 'vue'
+export function createApp() {
+	const app = createSSRApp(App)
+	return {
+		app
+	}
+}
+export function main(app: IApp) {
+    definePageRoutes();
+    defineAppConfig();
+    
+    (createApp()['app'] as VueApp).mount(app);
+}
+
+import { AppConfig } from "io.dcloud.uniapp.appframe"
+export class UniAppConfig extends AppConfig {
+    override name: string = "community-socializing"
+    override appid: string = ""
+    override versionName: string = "1.0.0"
+    override versionCode: string = "100"
+    override uniCompileVersion: string = "4.06"
+    
+    constructor() {}
+}
+
+import GenPagesIndexIndexClass from './pages/index/index.uvue?type=page'
+import GenPagesTopicTopicClass from './pages/topic/topic.uvue?type=page'
+import GenPagesMyMyClass from './pages/my/my.uvue?type=page'
+import GenPagesMsgMsgClass from './pages/msg/msg.uvue?type=page'
+function definePageRoutes() {
+__uniRoutes.push({ path: "pages/index/index", component: GenPagesIndexIndexClass, meta: { isQuit: true } as PageMeta, style: utsMapOf([["navigationBarTitleText","卷王自习室"]]) } as PageRoute)
+__uniRoutes.push({ path: "pages/topic/topic", component: GenPagesTopicTopicClass, meta: { isQuit: false } as PageMeta, style: utsMapOf([["navigationBarTitleText",""],["enablePullDownRefresh",false]]) } as PageRoute)
+__uniRoutes.push({ path: "pages/my/my", component: GenPagesMyMyClass, meta: { isQuit: false } as PageMeta, style: utsMapOf([["navigationBarTitleText",""],["enablePullDownRefresh",false]]) } as PageRoute)
+__uniRoutes.push({ path: "pages/msg/msg", component: GenPagesMsgMsgClass, meta: { isQuit: false } as PageMeta, style: utsMapOf([["navigationBarTitleText",""],["enablePullDownRefresh",false]]) } as PageRoute)
+}
+const __uniTabBar: Map<string, any | null> | null = null
+const __uniLaunchPage: Map<string, any | null> = utsMapOf([["url","pages/index/index"],["style",utsMapOf([["navigationBarTitleText","卷王自习室"]])]])
+@Suppress("UNCHECKED_CAST")
+function defineAppConfig(){
+  __uniConfig.entryPagePath = '/pages/index/index'
+  __uniConfig.globalStyle = utsMapOf([["navigationBarTextStyle","black"],["navigationBarTitleText","卷王自习室"],["navigationBarBackgroundColor","#ffffff"],["backgroundColor","#ffffff"]])
+  __uniConfig.tabBar = __uniTabBar as Map<string, any> | null
+  __uniConfig.conditionUrl = ''
+  __uniConfig.uniIdRouter = utsMapOf()
+  __uniConfig.ready = true
+}
